@@ -45,4 +45,8 @@ for index in range(1, len(list_of_numbers) + 1):
         next_dig = -i - 1
         list_of_numbers[-i], list_of_numbers[next_dig] = list_of_numbers[next_dig],  list_of_numbers[-i]
 
-print(f'Обратная последовательность четных чисел {list_of_numbers}')
+# todo можно пройти по списку в обратную сторону, чтобы избежать перестановок
+# l = []
+# for i in range(len(list_of_numbers) - 1, -1, -1):
+#     l.append(list_of_numbers[i])
+# print(l)

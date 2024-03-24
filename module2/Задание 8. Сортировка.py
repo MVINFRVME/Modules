@@ -22,3 +22,6 @@ nums = [1, 4, -3, 0, 10]
 print(f'Изначальный список: {nums}')
 selection_sort(nums)
 print(f'Отсортированный список: {nums}')
+
+
+# ok
