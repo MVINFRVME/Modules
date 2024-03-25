@@ -42,3 +42,5 @@ for GPU in GPU_list:
         new_GPU_list.append(GPU)
 
 print(f'Новый список видеокарт: {new_GPU_list}')
+
+# ok

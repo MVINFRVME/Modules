@@ -22,6 +22,7 @@
 
 # Ваш список любимых фильмов: Леон, Мементо
 
+# todo не нарушай pep8
 films = ['Крепкий орешек', 'Назад в будущее', 'Таксист', 'Леон', 'Богемская рапсодия', 'Город грехов', 'Мементо', 'Отступники', 'Деревня']
 user_list = []
 
@@ -29,7 +30,7 @@ number_of_additions = int(input('Сколько фильмов хотите до
 
 for _ in range(number_of_additions):
     user_film = input('Введите название фильма: ')
-    for i in films:
+    for i in films: # todo этот цикл может заменить оператор 'in', посмотри как он работает
         if user_film == i:
             user_list.append(i)
             break

@@ -40,6 +40,7 @@ for i, value in enumerate(original_list):
 
 print(f'Сдвинутый список: {new_list}')
 
-
-
+# todo можно сделать через срезы, только сдвигать будет при условии что сдвиг <= длины списка
+# new_list = original_list[-shift:] + original_list[:-shift]
+# print(new_list)
 
