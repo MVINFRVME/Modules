@@ -36,9 +36,11 @@ number_of_additions = int(input('Сколько фильмов хотите до
 
 for _ in range(number_of_additions):
     user_film = input('Введите название фильма: ')
-    if user_film in films: # todo этот цикл может заменить оператор 'in', посмотри как он работает
+    if user_film in films:
         user_list.append(user_film)
     else:
         print(f'Ошибка: фильм {user_film} у нас нет : (')
 
 print(f'Ваш список любимых фильмов: {user_list}')
+
+#ok
