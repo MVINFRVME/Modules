@@ -39,7 +39,7 @@ number_of_containers = int(input('Количество контейнеров: '
 for container in range(number_of_containers):
     while True:
         container = int(input('Введите вес контейнера: '))
-        if container < 200: # не превышает это <=
+        if container <= 200: # не превышает это <=
             list_of_containers.append(container)
             break
         else:
@@ -49,7 +49,7 @@ new_container = int(input('Введите вес нового контейнер
 new_list = []
 
 for index, value in enumerate(list_of_containers):
-    if value <= new_container:
+    if value < new_container:
         print(f'Номер, который получит новый контейнер: {index + 1}')
         break
 # todo не учитывает условие, что если вес совпадает, то нужно положить после
@@ -59,3 +59,8 @@ for index, value in enumerate(list_of_containers):
 # Введите вес контейнера: 2
 # Введите вес нового контейнера: 2
 # Номер, который получит новый контейнер: 1
+
+# Номер 4 ведь получит?
+# Если в ряду есть контейнеры с массой, как у нового, то его нужно положить после них.
+# И последовательность написано невозрастающая.
+# Напишите программу, которая получает на вход невозрастающую последовательность натуральных чисел

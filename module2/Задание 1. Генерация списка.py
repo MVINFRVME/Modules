@@ -16,10 +16,7 @@
 # Список из нечётных чисел от одного до N: [1, 3, 5, 7, 9, 11, 13]
 
 num = int(input('Введите число: '))
-num_list = []
-
-for i in range(1, num + 1, 2):
-    num_list.append(i)
+num_list = list(range(1, num + 1, 2))
 
 print(f'Список из нечетных чисел от одного до N: {num_list}')
 

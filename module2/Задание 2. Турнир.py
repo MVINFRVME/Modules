@@ -14,9 +14,8 @@
 name_list = ['Артемий', 'Борис', 'Влад', 'Гоша', 'Дима', 'Евгений', 'Женя', 'Захар']
 new_name_list = []
 
-for i, symbol in enumerate(name_list):
-    if i % 2 == 0:
-        new_name_list.append(symbol)
+for i in range(0, len(name_list), 2):
+    new_name_list.append(name_list[i])
 
 print(f'Первый день: {new_name_list}')
 
