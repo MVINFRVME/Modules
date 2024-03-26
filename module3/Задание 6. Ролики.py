@@ -62,3 +62,9 @@ while True:
     matches = 0
 
 print(f'Наибольшее количество людей, которые могут взять ролики: {total_matches}')
+
+# кажется можно немного упростить. Примерно так:
+# for foot_size in foots_list:
+#     if foot_size in rollers_list:
+#         total_matches += 1
+#         rollers_list.remove(foot_size)

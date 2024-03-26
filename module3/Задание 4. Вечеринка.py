@@ -66,7 +66,7 @@ while True:
             print(f'Прости, {name.title()}, но мест нет.')
 
     elif answer.lower() == 'ушел' or answer.lower() == 'ушёл':
-        for guest in guests:
+        for guest in guests: # тут снова можно проверку сделать if name.title() in guests...
             if guest == name.title():
                 print(f'Пока, {name.title()}!')
                 guests.remove(name.title())
@@ -74,3 +74,5 @@ while True:
         else:
             print('Такого гостя нет!')
 
+
+#ok

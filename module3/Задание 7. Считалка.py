@@ -69,3 +69,4 @@ while len(list_of_people) > 1:
 
 print(f'Остался человек под номером {list_of_people[0]}')
 
+#ok

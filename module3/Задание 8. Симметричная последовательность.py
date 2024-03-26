@@ -60,7 +60,7 @@ def is_palindrom(num_list):
     reversed_list = []
     for i_num in range(len(num_list) - 1, -1, -1):
         reversed_list.append(num_list[i_num])
-    if num_list == reversed_list:
+    if num_list == reversed_list: # можно просто return num_list == reversed_list, сравнение всегда возвращает boolean, поэтому можно обойтись без if
         return True
     else:
         return False
@@ -93,3 +93,14 @@ for i_nums in range(len(nums)):
 print(f'Исходный список: {nums}')
 print(f'Нужно чисел для палиндрома: {len(answer)}')
 print(f'Список этих чисел: {answer}')
+
+# у меня не работает
+
+# Количество чисел: 3
+# Число: 1
+# Число: 2
+# Число: 3
+# Последовательность: [[...], [...], [...]]
+# Исходный список: [[...], [...], [...]]
+# Нужно чисел для палиндрома: 0
+# Список этих чисел: []

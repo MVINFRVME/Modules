@@ -27,9 +27,11 @@ searching_detail = input('Название детали: ')
 detail_count = 0
 cost = 0
 
-for detail in shop:
-    if detail[0] == searching_detail.lower():
+for detail in shop: # тут можно сделать чуть чище. for detail_name, price in shop:
+    if detail[0] == searching_detail.lower(): # тогда можно не через индексы данные получать, это более наглядно
         detail_count += 1
         cost += detail[1]
 
 print(f'Количество деталей: {detail_count}\nОбщая стоимость: {cost}')
+
+#ok

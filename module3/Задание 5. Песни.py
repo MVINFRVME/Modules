@@ -77,3 +77,5 @@ for i in range(selected_songs_amt):
         print('Такой песни нету :(')
 
 print(f'Общее звучание песен: {round(total_time, 2)} минуты')
+
+#ok
