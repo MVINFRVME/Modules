@@ -19,5 +19,4 @@ for i in range(0, len(name_list), 2):
 
 print(f'Первый день: {new_name_list}')
 
-# todo можно сразу брать только четные элементы из списка через range(0, len(name_list), 2)
-# todo только учесть сразу длина списка четная или нет
+# ok
