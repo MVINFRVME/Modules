@@ -51,7 +51,8 @@ fives_count = main_list.count(5)
 print(f'Количество цифр 5 при первом объединении: {fives_count}')
 
 for _ in range(fives_count):
-    main_list.remove(5) # todo ты удаляешь только первое вхождение цифры 5, а нужно все
+    main_list.remove(5) # todo ты удаляешь только первое вхождение цифры 5, а нужно все.
+#Не нужно все удалять. Итоговый список должен быть с пятеркой: [1, 3, 1, 1, 1, 3, 1, 5, 3, 3]
 
 main_list.extend(third_list)
 threes_count = main_list.count(3)

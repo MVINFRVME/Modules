@@ -71,7 +71,7 @@ nums = []
 
 for _ in range(amt_of_nums):
     num = int(input('Число: '))
-    nums.append(nums)
+    nums.append(num)
 
 print(f'Последовательность: {nums}')
 
@@ -95,7 +95,7 @@ print(f'Нужно чисел для палиндрома: {len(answer)}')
 print(f'Список этих чисел: {answer}')
 
 # у меня не работает
-
+# лишняя буква 's' в 74 строке (( теперь работает
 # Количество чисел: 3
 # Число: 1
 # Число: 2
