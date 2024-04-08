@@ -18,7 +18,7 @@ duplicate_count = 0
 for i_sym, sym in enumerate(user_text):
     if len(user_text) == i_sym:
         break
-    elif user_text[(i_sym + 1) % len(user_text)] == sym:
+    elif user_text[(i_sym + 1) % len(user_text)] == sym: # что-то сложное)
         duplicate_count += 1
     else:
         duplicate_count += 1
@@ -26,3 +26,5 @@ for i_sym, sym in enumerate(user_text):
         duplicate_count = 0
 
 print(cipher_string)
+
+# todo если ввести "сссс" не работает

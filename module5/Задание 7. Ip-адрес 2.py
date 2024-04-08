@@ -53,3 +53,5 @@ def num_range(value):
 ip = input('Введите IP: ').split('.')
 if dot_check(ip) and digit_check(ip) and num_range(ip):
     print('IP-адрес корректен.')
+
+# ok

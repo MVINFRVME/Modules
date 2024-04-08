@@ -36,3 +36,5 @@ while True:
         break
     else:
         print('Пароль ненадёжный. Попробуйте ещё раз.')
+
+# ok

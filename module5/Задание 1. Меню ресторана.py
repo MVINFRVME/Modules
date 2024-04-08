@@ -17,6 +17,6 @@ print(f'Доступное меню: {available_menu}')
 temporary_list = available_menu.split(';')
 
 now_in_menu = ', '.join(temporary_list)
-print(f'Сейчас в меню есть: {now_in_menu}')
 
-
+# можно еще через replace сделать
+# ok

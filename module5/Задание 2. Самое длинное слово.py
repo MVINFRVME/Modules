@@ -37,7 +37,7 @@ print(f'Самое длинное слово: {the_longest_word}'
 # max_count = 0
 #
 # for word in user_list:
-#     for sym in word:
+#     for sym in word:   todo тут можно просто len взять
 #         count += 1
 #     if count > max_count:
 #         max_count = count
@@ -45,3 +45,5 @@ print(f'Самое длинное слово: {the_longest_word}'
 #     count = 0
 # print(f'Самое длинное слово: {the_longest_word}'
 #       f'\nДлинна этого слова: {len(the_longest_word)}')
+
+# ok

@@ -35,3 +35,5 @@ elif not file_name.endswith(valid_extensions):
     print('Неверное расширение файла. Ожидалось .txt или .docx.')
 else:
     print('Файл назван верно.')
+
+# ok
