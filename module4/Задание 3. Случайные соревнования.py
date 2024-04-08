@@ -31,4 +31,7 @@ second_team = [round(random.uniform(5, 10), 2) for _ in range(20)]
 print(f'Вторая команда: {second_team}')
 
 winners = [first_team[i] if first_team[i] > second_team[i] else second_team[i] for i in range(20)]
+# todo
+# нужно быть очень аккуратным с таким подходом, если вдруг захочешь поменять количество человек, то тут ты отталкиваешься
+# от конкретной цифры, а не от количества участников. Такие цифры принято выносить в константу
 print(f'Победители тура: {winners}')

@@ -30,3 +30,7 @@
 num = int(input('Введите длину списка: '))
 num_list = [1 if index % 2 == 0 else index % 5 for index in range(num)]
 print(num_list)
+
+# index не совсем подходящий нэйминг, лучше что-то вроде number
+
+#ok

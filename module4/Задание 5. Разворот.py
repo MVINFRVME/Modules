@@ -32,3 +32,5 @@ start_index = word.index('h')
 stop_index = word.rindex('h')
 cut_list = word[start_index + 1: stop_index]
 print(f'Развёрнутая последовательность между первым и последним h: {cut_list[::-1]}')
+
+#ok

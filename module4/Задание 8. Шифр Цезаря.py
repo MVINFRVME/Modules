@@ -27,8 +27,7 @@ def caesar_cipher(text, shift):
                    else sym
                    for sym in text]
     cipher = ''
-
-    for sym in cipher_list:
+    for sym in cipher_list: # можно использовать join чтобы упростить
         cipher += sym
 
     return cipher
@@ -37,3 +36,4 @@ def caesar_cipher(text, shift):
 text = input('Введите сообщение: ')
 shift = int(input('Введите сдвиг: '))
 print(caesar_cipher(text, shift))
+#ok
