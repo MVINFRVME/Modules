@@ -28,9 +28,8 @@ def caesar_cipher(text, shift):
                    for sym in text]
     cipher = ''
     for sym in cipher_list: # можно использовать join чтобы упростить
-        cipher += sym
-
-    return cipher
+        cipher += sym  # (в следующей домашке, опять это задание было, там как раз через join делал уже)
+        return cipher
 
 
 text = input('Введите сообщение: ')

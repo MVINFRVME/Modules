@@ -23,14 +23,15 @@
 #                   7.56, 7.8, 9.93, 8.25, 7.4, 8.26, 8.91, 7.11, 8.29, 9.52]
 
 import random
+quantity = 20
 
-first_team = [round(random.uniform(5, 10), 2) for _ in range(20)]
+first_team = [round(random.uniform(5, 10), 2) for _ in range(quantity)]
 print(f'Первая команда: {first_team}')
 
-second_team = [round(random.uniform(5, 10), 2) for _ in range(20)]
+second_team = [round(random.uniform(5, 10), 2) for _ in range(quantity)]
 print(f'Вторая команда: {second_team}')
 
-winners = [first_team[i] if first_team[i] > second_team[i] else second_team[i] for i in range(20)]
+winners = [first_team[i] if first_team[i] > second_team[i] else second_team[i] for i in range(quantity)]
 # todo
 # нужно быть очень аккуратным с таким подходом, если вдруг захочешь поменять количество человек, то тут ты отталкиваешься
 # от конкретной цифры, а не от количества участников. Такие цифры принято выносить в константу

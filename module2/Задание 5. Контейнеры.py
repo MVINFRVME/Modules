@@ -49,9 +49,11 @@ new_container = int(input('Введите вес нового контейнер
 new_list = []
 
 for index, value in enumerate(list_of_containers):
-    if value < new_container:
+    if new_container > value:
         print(f'Номер, который получит новый контейнер: {index + 1}')
         break
+else:
+    print(f'Номер, который получит новый контейнер: {index + 2}')
 
 # todo не учитывает условие, что если вес совпадает, то нужно положить после
 # Количество контейнеров: 3

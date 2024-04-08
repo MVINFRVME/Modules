@@ -21,29 +21,26 @@
 # Самое длинное слово: «б»
 # Длина этого слова: 1 символ
 
-user_text = input('Введите строку: ')
-
-user_list = user_text.split(' ')
-the_longest_word = max(user_list, key=len)
-print(f'Самое длинное слово: {the_longest_word}'
-      f'\nДлинна этого слова: {len(the_longest_word)}')
+# user_text = input('Введите строку: ')
+#
+# user_list = user_text.split(' ')
+# the_longest_word = max(user_list, key=len)
+# print(f'Самое длинное слово: {the_longest_word}'
+#       f'\nДлинна этого слова: {len(the_longest_word)}')
 
 # или
 
-# user_text = input('Введите строку: ')
-# user_list = user_text.split(' ')
-#
-# count = 0
-# max_count = 0
-#
-# for word in user_list:
-#     for sym in word:   todo тут можно просто len взять
-#         count += 1
-#     if count > max_count:
-#         max_count = count
-#         the_longest_word = word
-#     count = 0
-# print(f'Самое длинное слово: {the_longest_word}'
-#       f'\nДлинна этого слова: {len(the_longest_word)}')
+user_text = input('Введите строку: ')
+user_list = user_text.split(' ')
+
+max_count = 0
+
+for word in user_list:
+    if len(word) > max_count: # todo тут можно просто len взять
+        max_count = len(word)
+        the_longest_word = word
+
+print(f'Самое длинное слово: {the_longest_word}'
+      f'\nДлинна этого слова: {len(the_longest_word)}')
 
 # ok

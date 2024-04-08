@@ -11,20 +11,22 @@
 # Введите строку: aaAAbbсaaaA.
 # Закодированная строка: a2A2b2с1a3A1.
 
-
 user_text = input('Введите строку: ')
 cipher_string = ''
+prev_sym = ''
 duplicate_count = 0
-for i_sym, sym in enumerate(user_text):
-    if len(user_text) == i_sym:
-        break
-    elif user_text[(i_sym + 1) % len(user_text)] == sym: # что-то сложное)
+
+for i_sym, sym in enumerate(user_text[1:]):
+    if sym == user_text[i_sym]:
         duplicate_count += 1
     else:
         duplicate_count += 1
-        cipher_string += sym + str(duplicate_count)
+        cipher_string += user_text[i_sym] + str(duplicate_count)
         duplicate_count = 0
+
+cipher_string += user_text[i_sym] + str(duplicate_count + 1)
 
 print(cipher_string)
 
 # todo если ввести "сссс" не работает
+
