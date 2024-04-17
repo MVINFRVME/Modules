@@ -56,3 +56,5 @@ for key, value in sym_dict.items():
 print('\nИнвертированный словарь частот: ')
 for key, value in new_dict.items():
     print(f'{key} : {value}')
+
+# oK

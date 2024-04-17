@@ -30,6 +30,8 @@ if odd_count <= 1:
 else:
     print('Нельзя сделать палиндром')
 
+# ok, хорошее решение
+
 # или
 
 # def is_palindrome(my_text):

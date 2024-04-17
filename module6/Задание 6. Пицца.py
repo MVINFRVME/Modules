@@ -27,7 +27,8 @@ order_dict = dict()
 number_of_orders = int(input('Введите количество заказов: '))
 
 for i_order in range(1, number_of_orders + 1):
-    info = input(f'{i_order} заказ: ').split()
+    info = input(f'{i_order} заказ: ').split() # todo доступ по индексу лучше не использовать, т.к. не совсем понятно, что такое info[2]
+    # todo стоит сразу список который вернулся после сплита разложить по переменным например: a, b = [1, 2]
 
     if info[0] in order_dict:
         if info[1] in order_dict[info[0]]:

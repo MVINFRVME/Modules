@@ -33,3 +33,5 @@ for i_number in range(1, song_numbers + 1):
     total_time += violator_songs[i_song]
 
 print(f"Общее время звучания песен: {round(total_time, 2)} минуты.")
+
+# ok
