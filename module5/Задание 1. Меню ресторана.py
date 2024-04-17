@@ -14,7 +14,7 @@
 available_menu = 'утиное филе;фланк-стейк;банановый пирог;плов.'
 print(f'Доступное меню: {available_menu}')
 
-temporary_list = available_menu.split(';')
+temporary_list = available_menu.split(';') # todo вот это строка не нужна, ты temporary_list больше не пользуешься
 
 # now_in_menu = ', '.join(temporary_list)
 

@@ -28,5 +28,4 @@ cipher_string += user_text[i_sym] + str(duplicate_count + 1)
 
 print(cipher_string)
 
-# todo если ввести "сссс" не работает
-
+# ok

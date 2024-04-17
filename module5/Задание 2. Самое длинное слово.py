@@ -34,6 +34,7 @@ user_text = input('Введите строку: ')
 user_list = user_text.split(' ')
 
 max_count = 0
+the_longest_word = None # так pycharm не будет ругаться
 
 for word in user_list:
     if len(word) > max_count: # todo тут можно просто len взять
