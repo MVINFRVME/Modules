@@ -28,15 +28,16 @@ number_of_orders = int(input('Введите количество заказов
 
 for i_order in range(1, number_of_orders + 1):
     info = input(f'{i_order} заказ: ').split() # todo доступ по индексу лучше не использовать, т.к. не совсем понятно, что такое info[2]
+    name, pizza, quan = info
     # todo стоит сразу список который вернулся после сплита разложить по переменным например: a, b = [1, 2]
-
-    if info[0] in order_dict:
-        if info[1] in order_dict[info[0]]:
-            order_dict[info[0]][info[1]] += int(info[2])
+    # и правда очень удобно и наглядно
+    if name in order_dict:
+        if pizza in order_dict[name]:
+            order_dict[name][pizza] += int(quan)
         else:
-            order_dict[info[0]][info[1]] = int(info[2])
+            order_dict[name][pizza] = int(quan)
     else:
-        order_dict[info[0]] = {info[1]: int(info[2])}
+        order_dict[name] = {pizza: int(quan)}
 
 print()
 for name, menu in sorted(order_dict.items()):
