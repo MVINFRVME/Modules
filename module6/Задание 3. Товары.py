@@ -44,7 +44,9 @@ store = {
 for name, article in goods.items():
     total_quantity = 0
     total_price = 0
-    for i_good in store[article]:: # todo для чего ты используешь range(len(...)), цикл for умеет доставать объекты из коллекции
+    for i_good in store[article]:
         total_quantity += i_good['quantity']
         total_price += i_good['quantity'] * i_good['price']
     print(f'{name} - {total_quantity} шт, стоимость {total_price} рубля')
+
+# ok
