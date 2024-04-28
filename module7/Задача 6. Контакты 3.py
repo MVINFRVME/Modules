@@ -70,9 +70,9 @@ def search_contact():
     for i_name in cont_dict:
         if surname.title() in i_name:
             print(i_name, cont_dict[i_name])
-            name_check = True
+            name_check = True # todo если нашел, то дальше наверное нет смысла перебирать?
 
-    if not name_check:
+    if not name_check: # todo эту проверку можно заменить на else для цикла, будет лаконичнее
         print('Такой человек не найден.')
 
 

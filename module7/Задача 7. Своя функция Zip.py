@@ -31,7 +31,7 @@
 
 def my_zip(s_1, s_2):
 
-    tuple_res = ([(s_1[i_val], s_2[i_val]) for i_val in range(len(min(s_1, s_2, key=len)))])
+    tuple_res = ([(s_1[i_val], s_2[i_val]) for i_val in range(len(min(s_1, s_2, key=len)))]) # todo самые крайние скобки ничего не делают, чтобы создать генератор, нужно квадратные скобки поменять на круглые
     return tuple_res
 
 

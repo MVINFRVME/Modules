@@ -31,6 +31,37 @@
 # 'interests': ['languages', 'health food']
 # }
 # }
+
+def f(d:dict):
+    interests = set()
+    common_last_name_lenght = 0
+
+    for id, student_info in students.items():
+        print(id, student_info['age'])
+
+        interests.update(student_info['interests'])
+        common_last_name_lenght += len(student_info['surname'])
+    return interests, common_last_name_lenght
+# students = {
+# 1: {
+# 'name': 'Bob',
+# 'surname': 'Vazovski',
+# 'age': 23,
+# 'interests': ['biology, swimming']
+# },
+# 2: {
+# 'name': 'Rob',
+# 'surname': 'Stepanov',
+# 'age': 24,
+# 'interests': ['math', 'computer games', 'running']
+# },
+# 3: {
+# 'name': 'Alexander',
+# 'surname': 'Krug',
+# 'age': 22,
+# 'interests': ['languages', 'health food']
+# }
+# }
 #
 # def f(dict):
 # lst = []
@@ -94,17 +125,17 @@ students = {
             }
 
 
-def func(students_dict):
-    interest_list = list()
+def func(students_dict): # todo func не особо говорящее имя, попробуй заменить на описание того что она делает, если будет несколько слов это ок
+    interest_list = list() # todo обычно для словарей, списков и т.п. используют множественное число того что содержится внутри, а не приставка list\dict\etc
     letter_count = 0
-    for i_key in students_dict.values():
+    for i_key in students_dict.values(): # todo для переменной цикла хочется более говорящее имя
         interest_list += i_key['interests']
         letter_count += len(i_key['surname'])
 
-    return set(interest_list), letter_count
+    return set(interest_list), letter_count # todo c set хорошо придумал, а можно сразу его использовать?
 
 
-pairs = list()
+pairs = list() # todo тут все отлично, но вообще можно заменить на list comprehensions
 for id_num, info in students.items():
     pair = (id_num, info['age'])
     pairs.append(pair)

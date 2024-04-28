@@ -32,3 +32,5 @@ for i_dig in range(0, len(rand_list), 2):
 
 print(f'\nОригинальный список: {rand_list}'
       f'\nНовый список: {tuple_pairs_list}')
+
+# ok

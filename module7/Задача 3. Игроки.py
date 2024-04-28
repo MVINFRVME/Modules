@@ -21,3 +21,5 @@ players = {
 
 players_list = [i_key + i_value for i_key, i_value in players.items()]
 print(players_list)
+
+# ok

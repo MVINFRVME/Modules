@@ -23,7 +23,7 @@ def is_prime(x):
     if x <= 1:
         return False
 
-    for num in range(2, int(x ** 0.5) + 1):
+    for num in range(2, int(x ** 0.5) + 1): # todo тут хорош)
         if x % num == 0:
             return False
     else:
@@ -42,10 +42,13 @@ def crypto(seq):
 print(crypto('О Дивный Новый мир!'))
 print(crypto([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
 
+# ok
+
 # Необязательное усложнение: сделайте так, чтобы основная функция состояла только из оператора return и так же
 # возвращала список.
 
 # Вот так что-ли?
+# Todo неплохо придумал) но я думаю это намек на list comprehensions
 
 #
 # def is_prime(x):
