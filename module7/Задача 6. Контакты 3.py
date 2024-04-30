@@ -65,14 +65,13 @@ def add_contact():
 
 def search_contact():
     surname = input('Введите фамилию для поиска: ')
-    name_check = False
 
     for i_name in cont_dict:
         if surname.title() in i_name:
             print(i_name, cont_dict[i_name])
-            name_check = True # todo если нашел, то дальше наверное нет смысла перебирать?
+            break # todo если нашел, то дальше наверное нет смысла перебирать?
 
-    if not name_check: # todo эту проверку можно заменить на else для цикла, будет лаконичнее
+    else: # todo эту проверку можно заменить на else для цикла, будет лаконичнее
         print('Такой человек не найден.')
 
 

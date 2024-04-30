@@ -19,28 +19,28 @@
 # Советы и рекомендации
 # Для нумерации элементов используйте функцию enumerate. Это позволит работать одинаково со всеми структурами данных.
 
-def is_prime(x):
-    if x <= 1:
-        return False
-
-    for num in range(2, int(x ** 0.5) + 1): # todo тут хорош)
-        if x % num == 0:
-            return False
-    else:
-        return True
-
-
-def crypto(seq):
-    res_list = list()
-    for i_sym, sym in enumerate(seq):
-        if is_prime(i_sym):
-            res_list.append(sym)
-
-    return res_list
-
-
-print(crypto('О Дивный Новый мир!'))
-print(crypto([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+# def is_prime(x):
+#     if x <= 1:
+#         return False
+#
+#     for num in range(2, int(x ** 0.5) + 1): # todo тут хорош)
+#         if x % num == 0:
+#             return False
+#     else:
+#         return True
+#
+#
+# def crypto(seq):
+#     res_list = list()
+#     for i_sym, sym in enumerate(seq):
+#         if is_prime(i_sym):
+#             res_list.append(sym)
+#
+#     return res_list
+#
+#
+# print(crypto('О Дивный Новый мир!'))
+# print(crypto([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
 
 # ok
 
@@ -50,30 +50,20 @@ print(crypto([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
 # Вот так что-ли?
 # Todo неплохо придумал) но я думаю это намек на list comprehensions
 
-#
-# def is_prime(x):
-#     if x <= 1:
-#         return False
-#
-#     for num in range(2, int(x ** 0.5) + 1):
-#         if x % num == 0:
-#             return False
-#     else:
-#         return True
-#
-#
-# def check_index(seq):
-#     res_list = list()
-#     for i_sym, sym in enumerate(seq):
-#         if is_prime(i_sym):
-#             res_list.append(sym)
-#
-#     return res_list
-#
-#
-# def crypto(seq):
-#     return check_index(seq)
-#
-#
-# print(crypto('О Дивный Новый мир!'))
-# print(crypto([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+def is_prime(x):
+    if x <= 1:
+        return False
+
+    for num in range(2, int(x ** 0.5) + 1):
+        if x % num == 0:
+            return False
+    else:
+        return True
+
+
+def crypto(seq):
+    return [sym for i_sym, sym in enumerate(seq) if is_prime(i_sym)]
+
+
+print(crypto('О Дивный Новый мир!'))
+print(crypto([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
