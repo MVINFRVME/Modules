@@ -18,7 +18,7 @@ def tpl_sort(sequence):
         if not isinstance(dig, int):
             return sequence
 
-    return tuple(sorted(sequence)) # todo тут в list можно не оборачивать, посмотри чем отличается list.sort() и sorted(list)
+    return tuple(sorted(sequence))
 
 
 # tpl = (6, 3, -1, 8, 4, 10, -5)
