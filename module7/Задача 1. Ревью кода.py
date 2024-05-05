@@ -125,20 +125,22 @@ students = {
             }
 
 
-def surname_len_and_interests(data): # todo func не особо говорящее имя, попробуй заменить на описание того что она делает, если будет несколько слов это ок
-    stud_interests = set() # todo обычно для словарей, списков и т.п. используют множественное число того что содержится внутри, а не приставка list\dict\etc
+def surname_len_and_interests(data):
+    stud_interests = set()
     letter_count = 0
-    for id_student in data.values(): # todo для переменной цикла хочется более говорящее имя
+    for id_student in data.values():
         stud_interests.update(id_student['interests'])
         letter_count += len(id_student['surname'])
 
-    return set(stud_interests), letter_count # todo c set хорошо придумал, а можно сразу его использовать?
+    return set(stud_interests), letter_count # todo тут set можно убрать теперь
 
 
-pairs = [(id_num, info['age']) for id_num, info in students.items()] # todo тут все отлично, но вообще можно заменить на list comprehensions
+pairs = [(id_num, info['age']) for id_num, info in students.items()]
 
 interests, surnames_length = surname_len_and_interests(students)
 
 print(f'Список пар «ID студента — возраст»: {pairs}\n'
       f'Полный список интересов всех студентов: {interests}\n'
       f'Общая длина всех фамилий студентов: {surnames_length}')
+
+# ok

@@ -42,3 +42,5 @@ print(my_zip(seq_1, seq_2))
 
 for pair in my_zip(seq_1, seq_2):
     print(pair)
+
+# ok, усложненную версию не стал делать?

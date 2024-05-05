@@ -69,9 +69,9 @@ def search_contact():
     for i_name in cont_dict:
         if surname.title() in i_name:
             print(i_name, cont_dict[i_name])
-            break # todo если нашел, то дальше наверное нет смысла перебирать?
+            break
 
-    else: # todo эту проверку можно заменить на else для цикла, будет лаконичнее
+    else:
         print('Такой человек не найден.')
 
 
@@ -86,3 +86,5 @@ while True:
         search_contact()
     else:
         print('Ошибка ввода!')
+
+# ok
