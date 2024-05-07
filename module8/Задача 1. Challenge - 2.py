@@ -30,3 +30,5 @@ def prev_nums(number):
 
 num = int(input('Введите num: '))
 prev_nums(num)
+
+# ok

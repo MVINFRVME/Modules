@@ -32,3 +32,5 @@ def sum(*args):
 
 print(sum([[1, 2, [3]], [1], 3]))
 # print(sum(1, 2, 3, 4, 5))
+
+# ok

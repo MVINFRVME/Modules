@@ -17,11 +17,12 @@
 
 nice_list = [1, 2, [3, 4], [[5, 6, 7], [8, 9, 10]], [[11, 12, 13], [14, 15], [16, 17, 18]]]
 
+def unpack(seq, res=None):
+    res = res or []
 
-def unpack(seq, res=[]):
     for num in seq:
         if isinstance(num, list):
-            unpack(num)
+            unpack(num, res)
         else:
             res.append(num)
     return res
@@ -29,6 +30,4 @@ def unpack(seq, res=[]):
 
 print(unpack(nice_list))
 
-
-
-
+# ok

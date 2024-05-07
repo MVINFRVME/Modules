@@ -107,3 +107,5 @@ def q_sort(seq):
 
 nums = [5, 8, 9, 4, 2, 9, 1, 8]
 print(q_sort(nums))
+
+#ok

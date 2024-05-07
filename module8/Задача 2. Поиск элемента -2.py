@@ -65,7 +65,11 @@ select_key = input('Введите искомый ключ: ')
 optional_depth = input('Хотите ввести максимальную глубину? Y/N: ').lower()
 if optional_depth == 'n':
     print(f'Значение ключа: {search_key(select_key, site)}')
+    # print(f'Значение ключа: {search_key(select_key, {1: [], 2: []})}') # todo
+    # print(f'Значение ключа: {search_key(select_key, {1: [], 2: {"test": 123}})}')
 elif optional_depth == 'y':
     max_depth = int(input('Введите максимальную глубину: '))
     print(f'Значение ключа: {search_key_with_depth(select_key, site, max_depth)}')
+    # print(f'Значение ключа: {search_key_with_depth(select_key, {1: [], 2: []}, max_depth)}') # todo
+    # print(f'Значение ключа: {search_key_with_depth(select_key, {1: [], 2: {"test": 123}}, max_depth)}')
 
