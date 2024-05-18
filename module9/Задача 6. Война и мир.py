@@ -30,3 +30,5 @@ sorted_chars = sorted(chars.items(), reverse=True, key=lambda x: x[1])
 
 for char_info in sorted_chars:
     print(char_info[0], char_info[1])
+
+# todo почему-то показывает 0 для некоторых символов, которые встречаются ы тексте

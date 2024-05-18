@@ -50,3 +50,5 @@ for line in reversed(rows):
 # s.reverse()
 # print(''.join(s))
 # file.close()
+
+#ok

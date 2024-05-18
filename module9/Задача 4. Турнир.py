@@ -25,7 +25,7 @@
 import os
 
 
-def eliminate_players(pass_score=None):
+def eliminate_players(pass_score=None): # todo а зачем pass_score, если ты его потом берешь из файла?
     players_passed = []
     file = open('first_tour.txt', 'r', encoding='utf-8')
 
@@ -44,7 +44,7 @@ def eliminate_players(pass_score=None):
 
 
 def document_sorted_winners(players):
-    winners_file = open('second_tour.txt', 'a', encoding='utf-8')
+    winners_file = open('second_tour.txt', 'a', encoding='utf-8') # todo тут кажется логичным использовать режим w для файла (а может и нет)
     amt_of_winners = len(players)
     winners_file.write(str(amt_of_winners))
     sorted_players = sorted(players, reverse=True, key=lambda x: x[2])
@@ -58,3 +58,5 @@ def document_sorted_winners(players):
 
 winners = eliminate_players()
 document_sorted_winners(winners)
+
+# ok

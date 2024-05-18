@@ -34,3 +34,5 @@ print(f'{selected_path}\n'
       f'Размер каталога (в Кбайтах): {converted_size}\n'
       f'Количество подкаталогов: {measures["dirs"]}\n'
       f'Количество файлов: {measures["files"]}\n')
+
+# ok, тут тоже можно с pathlib поработать
