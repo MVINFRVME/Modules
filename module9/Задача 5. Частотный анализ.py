@@ -61,4 +61,4 @@ rec_file_name = 'analysis.txt'
 chars, total_chars = chars_in_text(file_name)
 write_sorted_percentage_of_chars(chars, total_chars, rec_file_name)
 
-
+# ok
