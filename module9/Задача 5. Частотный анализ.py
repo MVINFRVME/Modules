@@ -42,11 +42,12 @@ def chars_in_text(name_of_file):
 def write_sorted_percentage_of_chars(chrs, total_chrs, name_of_file): # todo передал сюда значение, но не использовал его
     analysis_file = open(name_of_file, 'w', encoding='utf-8')
 
-    for char, count in chars.items():
-        proportion = round(count / total_chars, 3) # todo тут total_chars из 59 строки, а не то, которое ты в функцию передал
-        chars[char] = proportion
+    for letter, count in chrs.items():
+        proportion = round(count / total_chrs, 3) # todo тут total_chars из 59 строки, а не то, которое ты в функцию передал
+        chrs[letter] = proportion
     sorted_chars = sorted(chrs.items(), key=lambda x: (-x[1], x[0])) # todo с chars и chrs тоже самое, внутри функции нужно работать с переменными функции или
     # todo константами, иначе можно получить ошибку, которую потом будет трудно отловить
+    # опечатался в обоих случаях :(
 
     for i_line in sorted_chars:
         line = f'{i_line[0]} {i_line[1]}\n'

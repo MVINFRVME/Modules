@@ -30,6 +30,7 @@ def calculate_file_sum(cur_file, summ=0):
 
 def write_answer(cur_file, summ):
     # todo про контекстный менеджер with еще не рассказывали?
+    # В конце следующего урока будет
     answer_file = open(cur_file, 'w')
     answer_file.write(str(summ))
     answer_file.close()

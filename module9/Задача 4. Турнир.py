@@ -25,7 +25,9 @@
 import os
 
 
-def eliminate_players(pass_score=None): # todo а зачем pass_score, если ты его потом берешь из файла?
+def eliminate_players(pass_score=None): # todo а зачем pass_score, если ты его потом берешь из файла?.
+    # По сути не за чем, но Питон ругается, если не задать по умолчанию pass_score, "Local variable 'pass_score' might be referenced before assignment"
+    # Что якобы мы можем сразу в else провалиться(хотя такого не может быть по сути) и там pass_score будет не инициализирован.
     players_passed = []
     file = open('first_tour.txt', 'r', encoding='utf-8')
 
@@ -44,9 +46,9 @@ def eliminate_players(pass_score=None): # todo а зачем pass_score, есл�
 
 
 def document_sorted_winners(players):
-    winners_file = open('second_tour.txt', 'a', encoding='utf-8') # todo тут кажется логичным использовать режим w для файла (а может и нет)
-    amt_of_winners = len(players)
-    winners_file.write(str(amt_of_winners))
+    winners_file = open('second_tour.txt', 'w', encoding='utf-8') # todo тут кажется логичным использовать режим w для файла (а может и нет)
+    amt_of_winners = len(players)                                 # если хочу перезаписать данные, то использую "w", если добавить , то "a".
+    winners_file.write(str(amt_of_winners))                       # В рамках этой задача(при однократном запуске) мне кажется без разницы.
     sorted_players = sorted(players, reverse=True, key=lambda x: x[2])
 
     for player_num, players_info in enumerate(sorted_players):

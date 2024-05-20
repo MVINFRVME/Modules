@@ -12,11 +12,13 @@
 import zipfile
 
 
-with zipfile.ZipFile('Ohlobystin_Musorshchik.zip', 'r') as myzip:
-    myzip.extractall()
+zfile = zipfile.ZipFile('Voina i mir.zip', 'r')
+for i_file_name in zfile.namelist():
+    zfile.extract(i_file_name)
+zfile.close()
 
 chars = {}
-text_file = open('Ohlobystin_Musorshchik_RuLit_Me.txt', 'r', encoding='utf-8')
+text_file = open('Voina i mir.txt', 'r', encoding='utf-8')
 
 for line in text_file:
     for sym in line:
@@ -24,7 +26,7 @@ for line in text_file:
             if sym in chars:
                 chars[sym] += 1
             else:
-                chars[sym] = 0
+                chars[sym] = 1
 
 sorted_chars = sorted(chars.items(), reverse=True, key=lambda x: x[1])
 
