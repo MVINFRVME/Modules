@@ -25,13 +25,14 @@
 import os
 
 
-def eliminate_players(pass_score=None): # todo а зачем pass_score, если ты его потом берешь из файла?.
+def eliminate_players(): # todo а зачем pass_score, если ты его потом берешь из файла?.
     # По сути не за чем, но Питон ругается, если не задать по умолчанию pass_score, "Local variable 'pass_score' might be referenced before assignment"
     # Что якобы мы можем сразу в else провалиться(хотя такого не может быть по сути) и там pass_score будет не инициализирован.
 
     # Понял, если дело в этом, то лучше прямо в теле функции добавить pass_score = None, хотя тут можно даже лучше
     # ты можешь считать отдельно первую строку через file.readline(), результат записать в переменную pass_score
     # а потом в цикле уже дочитать файл до конца
+    pass_score = None
     players_passed = []
     file = open('first_tour.txt', 'r', encoding='utf-8')
 
