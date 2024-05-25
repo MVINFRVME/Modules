@@ -50,3 +50,5 @@ escape_num = 777
 lose_num = 13
 wr_file_name = 'out_file.txt'
 try_to_escape(escape_num, lose_num, wr_file_name)
+
+# ok

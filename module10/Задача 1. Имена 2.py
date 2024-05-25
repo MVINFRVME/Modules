@@ -41,4 +41,5 @@ def count_sym(file):
 
 with open('people.txt', 'r', encoding='utf-8') as people_file:
     print(f'Общее количество символов: {count_sym(people_file)}')
-    
+
+# ok

@@ -55,10 +55,12 @@ def is_valid_data(info):
             if len(clear_data) != 3:
                 raise IndexError
             name, email, age = clear_data
+            # можно if сложить в один if name_check and email_check ...
+            # или можно воспользоваться функцией all чтобы было более лаконично
             if name_check(name, clear_data):
                 if email_check(email, clear_data):
                     if age_check(age, clear_data):
-                        registrations_good_file.write(line)
+                        registrations_good_file.write(line) # лучше не пользоваться глобальными переменными без необходимости, это всегда потенциальное место для ошибки
 
         except IndexError:
             error_text = f'{clear_data}       НЕ присутствуют все три поля.\n'

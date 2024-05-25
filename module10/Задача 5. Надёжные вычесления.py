@@ -41,3 +41,16 @@ try:
 
 except ValueError as exc:
     print(f'{exc}. Введите число, а не строку!')
+
+# Традиционно счмитается, что нужно оборачить в try-except как можно меньше строк кода, в этом случае лучше что-то такое
+
+# n = None
+# try:
+#     n = int(input('Введите число: '))
+# except ValueError as exc:
+#     print(f'{exc}. Введите число, а не строку!')
+#
+# if n is not None:
+#     print(f'Квадратный корень числа равен: {square_root(n)}')
+
+# ok

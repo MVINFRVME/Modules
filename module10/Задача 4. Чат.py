@@ -25,7 +25,7 @@ while True:
             chat_file.close()
 
         elif action_type == '1':
-            chat_file = open('chat.txt', 'a', encoding='utf-8')
+            chat_file = open('chat.txt', 'a', encoding='utf-8') # with можно было
             user_text = input('Введите сообщение: ')
             line = f'{user_name}: {user_text}\n'
             chat_file.write(line)
@@ -36,3 +36,5 @@ while True:
 
     except FileNotFoundError:
         print('Для начала введите хотя бы одно сообщение, чтобы отобразить чат!')
+
+# ok
