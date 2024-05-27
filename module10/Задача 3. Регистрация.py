@@ -104,7 +104,10 @@ def age_check(age, clear_data):
         registrations_bad_file.write(error_text)
         return False
 
-
+# лучше открывать файл непосредственно там, где ты будешь с ним взаимодействавать
+# такой подход экономит ресурсы, кроме того могут возникать случаи когда сразу несколько программ хотят работать с файлом
+# если для чтения это ок, т.к. файл не изменяется, то для режимов записи могут возникнуть проблемы
+# https://www.youtube.com/watch?v=UcKkmwaRbsQ я стараюсь всегда использовать Path, а не просто str
 with open('registrations.txt', 'r', encoding='utf-8') as user_info:
     with open('registrations_good.log', 'w', encoding='utf-8') as registrations_good_file:
         with open('registrations_bad.log', 'w', encoding='utf-8') as registrations_bad_file:
