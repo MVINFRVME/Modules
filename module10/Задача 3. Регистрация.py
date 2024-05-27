@@ -52,6 +52,8 @@ from pathlib import Path
 
 
 def is_valid_data():
+    registrations_bad = []
+    registrations_good = []
     with open(Path('registrations.txt'), 'r', encoding='utf-8') as user_info:
         for line in user_info:
             clear_data = line.rstrip().split()
@@ -61,17 +63,24 @@ def is_valid_data():
                 name, email, age = clear_data
                 # можно if сложить в один if name_check and email_check ...
                 # или можно воспользоваться функцией all чтобы было более лаконично
-                if name_check(name, clear_data) and email_check(email, clear_data) and age_check(age, clear_data):
-                    with open('registrations_good.log', 'a', encoding='utf-8') as registrations_good_file:
-                        registrations_good_file.write(line) # лучше не пользоваться глобальными переменными без необходимости, это всегда потенциальное место для ошибки
+                if name_check(name, clear_data, registrations_bad) and email_check(email, clear_data, registrations_bad) and age_check(age, clear_data, registrations_bad):
+                    registrations_good.append(line)
+                    write_info(registrations_good, Path('registrations_good.log'))
 
             except IndexError:
                 error_text = f'{clear_data}       НЕ присутствуют все три поля.\n'
-                with open(Path('registrations_bad.log'), 'a', encoding='utf-8') as registrations_bad_file:
-                    registrations_bad_file.write(error_text)
+                registrations_bad.append(error_text)
+
+    write_info(registrations_bad, Path('registrations_bad.log'))
 
 
-def name_check(name, clear_data):
+def write_info(data: list, path: Path):
+    with open(path, 'w', encoding='utf-8') as file:
+        for line in data:
+            file.write(line)
+
+
+def name_check(name, clear_data, bads):
     try:
         if not name.isalpha():
             raise NameError
@@ -79,12 +88,11 @@ def name_check(name, clear_data):
             return True
     except NameError:
         error_text = f'{clear_data}        Поле «Имя» содержит НЕ только буквы.\n'
-        with open(Path('registrations_bad.log'), 'a', encoding='utf-8') as registrations_bad_file:
-            registrations_bad_file.write(error_text)
-            return False
+        bads.append(error_text)
+        return False
 
 
-def email_check(email, clear_data):
+def email_check(email, clear_data, bads):
     try:
         if '@' not in email:
             raise SyntaxError
@@ -94,12 +102,11 @@ def email_check(email, clear_data):
             return True
     except SyntaxError:
         error_text = f'{clear_data}        Поле «Имейл» НЕ содержит @ и точку.\n'
-        with open(Path('registrations_bad.log'), 'a', encoding='utf-8') as registrations_bad_file:
-            registrations_bad_file.write(error_text)
-            return False
+        bads.append(error_text)
+        return False
 
 
-def age_check(age, clear_data):
+def age_check(age, clear_data, bads):
     try:
         if not 10 <= int(age) <= 99:
             raise ValueError
@@ -107,9 +114,8 @@ def age_check(age, clear_data):
             return True
     except ValueError:
         error_text = f'{clear_data}        Поле «Возраст» НЕ представляет число от 10 до 99.\n'
-        with open(Path('registrations_bad.log'), 'a', encoding='utf-8') as registrations_bad_file:
-            registrations_bad_file.write(error_text)
-            return False
+        bads.append(error_text)
+        return False
 
 # лучше открывать файл непосредственно там, где ты будешь с ним взаимодействавать
 # такой подход экономит ресурсы, кроме того могут возникать случаи когда сразу несколько программ хотят работать с файлом
