@@ -48,23 +48,27 @@
 # справедливо и для файлов. Старайтесь открывать и закрывать их экономно, например, открыть файлы можно до цикла, а
 # закрыть — после (если нет необходимости переоткрывать файл внутри цикла).
 
-def is_valid_data(info):
-    for line in info:
-        clear_data = line.rstrip().split()
-        try:
-            if len(clear_data) != 3:
-                raise IndexError
-            name, email, age = clear_data
-            # можно if сложить в один if name_check and email_check ...
-            # или можно воспользоваться функцией all чтобы было более лаконично
-            if name_check(name, clear_data):
-                if email_check(email, clear_data):
-                    if age_check(age, clear_data):
+from pathlib import Path
+
+
+def is_valid_data():
+    with open(Path('registrations.txt'), 'r', encoding='utf-8') as user_info:
+        for line in user_info:
+            clear_data = line.rstrip().split()
+            try:
+                if len(clear_data) != 3:
+                    raise IndexError
+                name, email, age = clear_data
+                # можно if сложить в один if name_check and email_check ...
+                # или можно воспользоваться функцией all чтобы было более лаконично
+                if name_check(name, clear_data) and email_check(email, clear_data) and age_check(age, clear_data):
+                    with open('registrations_good.log', 'a', encoding='utf-8') as registrations_good_file:
                         registrations_good_file.write(line) # лучше не пользоваться глобальными переменными без необходимости, это всегда потенциальное место для ошибки
 
-        except IndexError:
-            error_text = f'{clear_data}       НЕ присутствуют все три поля.\n'
-            registrations_bad_file.write(error_text)
+            except IndexError:
+                error_text = f'{clear_data}       НЕ присутствуют все три поля.\n'
+                with open(Path('registrations_bad.log'), 'a', encoding='utf-8') as registrations_bad_file:
+                    registrations_bad_file.write(error_text)
 
 
 def name_check(name, clear_data):
@@ -75,8 +79,9 @@ def name_check(name, clear_data):
             return True
     except NameError:
         error_text = f'{clear_data}        Поле «Имя» содержит НЕ только буквы.\n'
-        registrations_bad_file.write(error_text)
-        return False
+        with open(Path('registrations_bad.log'), 'a', encoding='utf-8') as registrations_bad_file:
+            registrations_bad_file.write(error_text)
+            return False
 
 
 def email_check(email, clear_data):
@@ -89,8 +94,9 @@ def email_check(email, clear_data):
             return True
     except SyntaxError:
         error_text = f'{clear_data}        Поле «Имейл» НЕ содержит @ и точку.\n'
-        registrations_bad_file.write(error_text)
-        return False
+        with open(Path('registrations_bad.log'), 'a', encoding='utf-8') as registrations_bad_file:
+            registrations_bad_file.write(error_text)
+            return False
 
 
 def age_check(age, clear_data):
@@ -101,14 +107,20 @@ def age_check(age, clear_data):
             return True
     except ValueError:
         error_text = f'{clear_data}        Поле «Возраст» НЕ представляет число от 10 до 99.\n'
-        registrations_bad_file.write(error_text)
-        return False
+        with open(Path('registrations_bad.log'), 'a', encoding='utf-8') as registrations_bad_file:
+            registrations_bad_file.write(error_text)
+            return False
 
 # лучше открывать файл непосредственно там, где ты будешь с ним взаимодействавать
 # такой подход экономит ресурсы, кроме того могут возникать случаи когда сразу несколько программ хотят работать с файлом
 # если для чтения это ок, т.к. файл не изменяется, то для режимов записи могут возникнуть проблемы
 # https://www.youtube.com/watch?v=UcKkmwaRbsQ я стараюсь всегда использовать Path, а не просто str
-with open('registrations.txt', 'r', encoding='utf-8') as user_info:
-    with open('registrations_good.log', 'w', encoding='utf-8') as registrations_good_file:
-        with open('registrations_bad.log', 'w', encoding='utf-8') as registrations_bad_file:
-            is_valid_data(user_info)
+
+
+# В подсказках пишут: Старайтесь открывать и закрывать файлы экономно, например, открыть файлы можно до цикла, а
+# закрыть — после (если нет необходимости переоткрывать файл внутри цикла).
+# Попробовал открыть файл 'registrations_bad.log' для записи внутри функции is_valid_data(), чтобы по нескольку раз не
+# открывать, тогда питон ругается «Unresolved reference» внутри функций name_check, email_check, age_check, поэтому
+# открываю 'registrations_bad.log' внутри этих функций каждый раз.
+
+is_valid_data()
