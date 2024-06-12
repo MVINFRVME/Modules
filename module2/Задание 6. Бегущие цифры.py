@@ -40,6 +40,4 @@ for i, value in enumerate(original_list):
 
 print(f'Сдвинутый список: {new_list}')
 
-
-
-
+# ok

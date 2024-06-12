@@ -39,7 +39,7 @@ number_of_containers = int(input('Количество контейнеров: '
 for container in range(number_of_containers):
     while True:
         container = int(input('Введите вес контейнера: '))
-        if container < 200:
+        if container <= 200: # не превышает это <=
             list_of_containers.append(container)
             break
         else:
@@ -49,6 +49,10 @@ new_container = int(input('Введите вес нового контейнер
 new_list = []
 
 for index, value in enumerate(list_of_containers):
-    if value <= new_container:
+    if new_container > value:
         print(f'Номер, который получит новый контейнер: {index + 1}')
         break
+else:
+    print(f'Номер, который получит новый контейнер: {index + 2}')
+
+# ok

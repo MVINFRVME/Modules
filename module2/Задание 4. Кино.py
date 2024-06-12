@@ -22,18 +22,25 @@
 
 # Ваш список любимых фильмов: Леон, Мементо
 
-films = ['Крепкий орешек', 'Назад в будущее', 'Таксист', 'Леон', 'Богемская рапсодия', 'Город грехов', 'Мементо', 'Отступники', 'Деревня']
+# todo не нарушай pep8
+films = [
+    'Крепкий орешек', 'Назад в будущее',
+    'Таксист', 'Леон',
+    'Богемская рапсодия', 'Город грехов',
+    'Мементо', 'Отступники', 'Деревня'
+]
+
 user_list = []
 
 number_of_additions = int(input('Сколько фильмов хотите добавить? '))
 
 for _ in range(number_of_additions):
     user_film = input('Введите название фильма: ')
-    for i in films:
-        if user_film == i:
-            user_list.append(i)
-            break
+    if user_film in films:
+        user_list.append(user_film)
     else:
         print(f'Ошибка: фильм {user_film} у нас нет : (')
 
 print(f'Ваш список любимых фильмов: {user_list}')
+
+#ok
