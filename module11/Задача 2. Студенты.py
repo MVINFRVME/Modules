@@ -23,7 +23,7 @@ students = [Student('Ivanov Ivan', 1, [5, 4, 4, 3, 4]),
             Student('Ivan Ivanov', 4, [4, 4, 3, 4, 4]),
             Student('Petr Petrov', 4, [5, 5, 5, 5, 5])]
 
-for i_student in students:
+for i_student in students: # я бы назвал просто student, будет выглядеть чище
     cur_grades = 0
     for grade in i_student.grades:
         cur_grades += grade
@@ -33,3 +33,5 @@ sorted_students = sorted(students, key=lambda x: x.grades)
 
 for i_student in sorted_students:
     print(f'Студент: {i_student.name}, группа: {i_student.group_num}, средний бал: {i_student.grades}')
+
+# ok

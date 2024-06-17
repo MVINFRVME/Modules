@@ -108,6 +108,7 @@ class Player:
             return self.make_a_move()
 
         return cell_num
+    # todo вообще норм, но рекурсия выглядит переусложнением, можно сделать бесконечный цикл, проверять строку на то что это число, потом что значение от 1 до 9
 
 
 class Game:
@@ -169,3 +170,7 @@ while True:
         continue
     else:
         break
+
+# можно укоротить
+# if not game.start_game():
+#   break

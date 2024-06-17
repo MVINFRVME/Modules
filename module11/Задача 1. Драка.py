@@ -12,10 +12,10 @@ import random
 
 
 class Warrior:
-    hp = 100
+    hp = 100 # это аттрибут класса
 
     def __init__(self, hp=100):
-        self.hp = hp
+        self.hp = hp # а это аттрибут экземпляра, нужно понять чем они отличаются и какой нужен в данном случае
 
     def receive_dmg(self, dmg=20):
         self.hp -= dmg
@@ -27,7 +27,7 @@ class Warrior:
 def choose_target():
     target = random.randint(1, 2)
     if target == 1:
-        warrior_1.receive_dmg()
+        warrior_1.receive_dmg() # todo лучше всегда явно передавать объекты если это возможно
         print('Атаковал "Воин-2"!')
         warrior_1.show_hp()
     else:

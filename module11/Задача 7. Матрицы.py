@@ -88,6 +88,7 @@
 
 class Matrix:
     def __init__(self, row, column):
+        # todo можно передавать только data, а row и column вычислять
         self.row = row
         self.column = column
         self.data = None
@@ -170,7 +171,7 @@ print("Матрица 2:")
 print(m2)
 
 print("Сложение матриц:")
-print(m1.add(m2))
+print(m1.add(m2)) # todo посмотри что будет, если метод add назвать __add__, а здесь заменить на m1 + m2
 
 print("Вычитание матриц:")
 print(m1.subtract(m2))

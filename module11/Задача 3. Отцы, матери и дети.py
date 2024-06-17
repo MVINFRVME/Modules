@@ -19,7 +19,7 @@
 # Реализация состояний — на ваше усмотрение. Это может быть и простой «флаг», и словарь состояний, и что-то поинтереснее
 
 import random
-from family import Parent
+from family import Parent # можно через запятую Parent, Child
 from family import Child
 
 
@@ -43,7 +43,7 @@ def input_family_info():
     return Parent(parent_name, parent_age, all_children), all_children
 
 
-cur_parent, cur_children = input_family_info()
+cur_parent, cur_children = input_family_info() # я бы вернул только parent, а детей потом получал через объект родителя и убрал приставки cur, i
 print()
 for i_child in cur_children:
     print(

@@ -46,7 +46,7 @@
 
 import random
 
-
+# todo по заданию нужно чтобы люди жили в одном доме
 class Human:
     day = 0
 

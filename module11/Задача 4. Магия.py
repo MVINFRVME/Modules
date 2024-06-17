@@ -47,7 +47,7 @@ class Water:
 
 
 class Air:
-    name = 'Воздух'
+    name = 'Воздух' # это тоже константа
 
     def __add__(self, other):
         if isinstance(other, Fire):
@@ -125,3 +125,5 @@ for i_elem in elements:
 
     except AttributeError:
         continue
+
+# ok
