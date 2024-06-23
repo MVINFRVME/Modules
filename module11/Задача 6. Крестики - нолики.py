@@ -96,18 +96,18 @@ class Player:
         self.symbol = symbol
 
     def make_a_move(self):
-        try:
-            cell_num = int(input(f'{self.name}, введите номер клетки (1 - 9): '))
+        while True:
+            cell_num = input(f'{self.name}, введите номер клетки (1 - 9): ')
+            if not cell_num.isdigit():
+                print('Используйте только цифры!')
+                continue
 
-            while not 1 <= cell_num <= 9:
+            cell_num = int(cell_num)
+            if not 1 <= cell_num <= 9:
                 print('Неверное значение! Введите номер от 1 до 9!')
-                return self.make_a_move()
+                continue
 
-        except ValueError:
-            print('Используйте только цифры!')
-            return self.make_a_move()
-
-        return cell_num
+            return cell_num
     # todo вообще норм, но рекурсия выглядит переусложнением, можно сделать бесконечный цикл, проверять строку на то что это число, потом что значение от 1 до 9
 
 
@@ -166,11 +166,5 @@ player_2 = Player(second_player_name, 'o')
 while True:
     game = Game(player_1, player_2)
     game.board.board_state()
-    if game.start_game():
-        continue
-    else:
+    if not game.start_game():
         break
-
-# можно укоротить
-# if not game.start_game():
-#   break

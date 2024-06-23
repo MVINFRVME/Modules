@@ -12,35 +12,36 @@ import random
 
 
 class Warrior:
-    hp = 100 # это аттрибут класса
+    HP = 100
+    DMG = 20
 
-    def __init__(self, hp=100):
-        self.hp = hp # а это аттрибут экземпляра, нужно понять чем они отличаются и какой нужен в данном случае
+    def __init__(self, name):
+        self.name = name
+        self.hp = self.HP  # а это аттрибут экземпляра, нужно понять чем они отличаются и какой нужен в данном случае.
 
-    def receive_dmg(self, dmg=20):
-        self.hp -= dmg
+    def receive_dmg(self):
+        self.hp -= self.DMG
 
     def show_hp(self):
         print(f'Здоровье цели: {self.hp} HP\n')
 
-
-def choose_target():
-    target = random.randint(1, 2)
-    if target == 1:
-        warrior_1.receive_dmg() # todo лучше всегда явно передавать объекты если это возможно
-        print('Атаковал "Воин-2"!')
-        warrior_1.show_hp()
-    else:
-        warrior_2.receive_dmg()
-        print('Атаковал "Воин-1"!')
-        warrior_2.show_hp()
+    def __str__(self):
+        return self.name
 
 
-warrior_1 = Warrior()
-warrior_2 = Warrior()
+def choose_target(warriors):
+    target = random.choice(warriors)
+    target.receive_dmg()  # todo лучше всегда явно передавать объекты если это возможно
+    target.show_hp()
+    print(f'Атаковал {target}!')
+
+
+warrior_1 = Warrior('Толя')
+warrior_2 = Warrior('Валя')
+warriors = [warrior_1, warrior_2]
 
 while warrior_1.hp > 0 and warrior_2.hp > 0:
-    choose_target()
+    choose_target(warriors)
 else:
     if warrior_1.hp > 0:
         print('Победу одержал "Воин-1"!')

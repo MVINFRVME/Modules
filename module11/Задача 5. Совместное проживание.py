@@ -46,14 +46,15 @@
 
 import random
 
+
 # todo по заданию нужно чтобы люди жили в одном доме
 class Human:
     day = 0
 
-    def __init__(self, name):
+    def __init__(self, name, house):
         self.name = name
         self.hunger = 50
-        self.house = House()
+        self.house = house
 
     def eat(self):
         self.hunger += 10
@@ -87,12 +88,18 @@ class Human:
 
 
 class House:
-    fridge = 50
-    money = 0
+    START_FRIDGE = 50
+    START_MONEY = 0
+
+    def __init__(self):
+        self.fridge = self.START_FRIDGE
+        self.money = self.START_MONEY
 
 
-human_1 = Human('Жорик')
-human_2 = Human('Толян')
+my_house = House()
+human_1 = Human('Жорик', my_house)
+human_2 = Human('Толян', my_house)
+
 
 while human_1.hunger >= 0 and human_2.hunger >= 0 and Human.day <= 365:
     Human.day += 1
@@ -103,5 +110,3 @@ if human_1.hunger < 0 or human_2.hunger < 0:
     print(f'Человек умер от голода на {Human.day} дн. Эксперимент закончен :(((')
 elif Human.day > 365:
     print('Ура! Все выжили!')
-
-
