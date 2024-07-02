@@ -111,7 +111,7 @@ def one_year_of_war():
             newborn_evils = [MonsterBerserk("Берсерк " + random.choice(evil_names)), MonsterHunter("Рейнджер " + random.choice(evil_names))]
             evil_team.append(random.choice(newborn_evils))
 
-        if any([not hero.is_alive() for hero in good_team]):
+        if any([not hero.is_alive() for hero in good_team]): # todo лучше без [], с ними ты составляешь список, а без них генератор
             print("Вы проиграли!")
             return 0
         else:
@@ -133,3 +133,5 @@ if count_of_wins < 10:
     print("Героям нужна другая тактика, попробуйте ещё!")
 else:
     print("Герои готовы к реальному сражению, задание выполнено!")
+
+# ok

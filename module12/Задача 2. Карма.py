@@ -78,3 +78,8 @@ with open(Path('karma.log'), 'w', encoding='utf-8') as karma_file:
             karma_file.write('Смерть от чревоугодия.\n')
         except DepressionError:
             karma_file.write('Суицид.\n')
+
+# todo все ок, только сами сообщения можно было бы поместить внутрь эксепшена
+# class MyException(Exception):
+#     msg = "Some death reason"
+# todo а потом ловить исключения скопом, и писать сообщение в файл
