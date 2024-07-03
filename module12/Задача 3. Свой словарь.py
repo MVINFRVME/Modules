@@ -7,7 +7,10 @@
 # Реализуйте класс MyDict, который будет вести себя точно так же, как и обычный словарь (попробуйте унаследовать его от
 # оригинального dict), за исключением того, что метод get по умолчанию будет возвращать не None, а число 0.
 
-class MyDict(dict):
+from collections import UserDict
+
+
+class MyDict(UserDict):
     def get(self, key, default=0):
         return super().get(key, default)
 

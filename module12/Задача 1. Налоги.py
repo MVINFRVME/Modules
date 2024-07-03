@@ -25,35 +25,89 @@
 # Классы и методы/функции имеют прописанную документацию.
 
 class Property:
-    def __init__(self, worth):
-        self.worth = worth
+    """
+    Базовый класс, описывающий имущество
 
-    def calculate_tax(self):
+    Args:
+        worth (int): передается стоимость имущества
+    """
+    def __init__(self, worth):
+        self.__worth = worth
+
+    def get_worth(self):
+        """
+        Геттер для получения стоимости
+
+        :return: __worth
+        :rtype: int
+        """
+        return self.__worth
+
+    def calculate_tax(self) -> int | float:
         pass
 
 
 class Apartment(Property):
+    """
+    Класс Апартаменты. Родитель: Person
+
+    Args:
+        worth (int): передается стоимость имущества
+
+    """
     def __init__(self, worth):
         super().__init__(worth)
 
-    def calculate_tax(self):
-        return self.worth / 10000
+    def calculate_tax(self) -> int | float:
+        """
+        Метод расчета налога
+
+        :return: Налог на машину (вычисляется как 1/1000 её стоимости)
+        :rtype: int | float
+        """
+        return self.get_worth() / 10000
 
 
 class Car(Property):
+    """
+    Класс Автомобиль. Родитель: Person
+
+    Args:
+        worth (int): передается стоимость имущества
+
+    """
     def __init__(self, worth):
         super().__init__(worth)
 
-    def calculate_tax(self):
-        return self.worth / 200
+    def calculate_tax(self) -> int | float:
+        """
+        Метод расчета налога
+
+        :return: Налог на машину (вычисляется как 1/200 её стоимости)
+        :rtype: int | float
+        """
+        return self.get_worth() / 200
 
 
 class CountryHouse(Property):
+    """
+    Класс Дачный Дом. Родитель: Person
+
+    Args:
+        worth (int): передается стоимость имущества
+
+    """
     def __init__(self, worth):
         super().__init__(worth)
 
-    def calculate_tax(self):
-        return self.worth / 500
+    def calculate_tax(self) -> int | float:
+        """
+        Метод расчета налога
+
+        :return: Налог на машину (вычисляется как 1/500 её стоимости)
+        :rtype: int | float
+        """
+        return self.get_worth() / 500
 
 
 total_money = int(input('Введите количество денег: '))
@@ -80,3 +134,5 @@ else:
 
 # todo в требованиях указано, что нужно написать докстринги для методов, остальное ок.
 # todo и есть еще упоминание про сеттеры-геттеры, видимо хотели чтобы worth был приватным
+
+# print(Property.__doc__)

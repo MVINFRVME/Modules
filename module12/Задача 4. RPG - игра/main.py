@@ -112,6 +112,7 @@ def one_year_of_war():
             evil_team.append(random.choice(newborn_evils))
 
         if any([not hero.is_alive() for hero in good_team]): # todo лучше без [], с ними ты составляешь список, а без них генератор
+            # этот код изначально такой и такой был, было сказано, что менять нельзя (62 строка)
             print("Вы проиграли!")
             return 0
         else:

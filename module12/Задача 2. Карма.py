@@ -30,23 +30,28 @@ import random
 
 
 class KillError(Exception):
-    pass
+    def __str__(self):
+        return 'Вас убили.\n'
 
 
 class DrunkError(Exception):
-    pass
+    def __str__(self):
+        return 'Отравились суррогатом.\n'
 
 
 class CarCrashError(Exception):
-    pass
+    def __str__(self):
+        return 'Автокатастрофа.\n'
 
 
 class GluttonyError(Exception):
-    pass
+    def __str__(self):
+        return 'Смерть от чревоугодия.\n'
 
 
 class DepressionError(Exception):
-    pass
+    def __str__(self):
+        return 'Суицид.\n'
 
 
 def one_day():
@@ -68,16 +73,8 @@ with open(Path('karma.log'), 'w', encoding='utf-8') as karma_file:
                 print('Вы достигли просветления!')
                 break
             karma_points += one_day()
-        except KillError:
-            karma_file.write('Вас убили.\n')
-        except DrunkError:
-            karma_file.write('Отравились суррогатом.\n')
-        except CarCrashError:
-            karma_file.write('Автокатастрофа.\n')
-        except GluttonyError:
-            karma_file.write('Смерть от чревоугодия.\n')
-        except DepressionError:
-            karma_file.write('Суицид.\n')
+        except (KillError, DrunkError, CarCrashError, GluttonyError, DepressionError) as error:
+            karma_file.write(str(error))
 
 # todo все ок, только сами сообщения можно было бы поместить внутрь эксепшена
 # class MyException(Exception):

@@ -48,19 +48,15 @@ class Stack:
         """Метод добавление элемента в стек. Добавляет элемент в конец стека"""
         self.__st.append(elem)
 
-    def remove(self, elem=None):
+    def pop(self):
         # todo мне кажется что здесь удаление конкретного элемента должно было не через remove, стек подразумевает, что
         # todo можно извлекать элементы по одному с конца. Т.е. если ты хочешь удалить третий с конца, то нужно
         # todo "снять" последний, затем предпоследний, удалить третий с конца(который теперь последний)
         # todo а потом сложить "снятые" обратно
-        """Метод удаление элемента из стека. Удаляет по умолчанию последний элемент, также можно указать определенный
-        элемент. Если стек пустой, возвращает None."""
+        """Метод удаление элемента из стека. Удаляет по умолчанию последний элемент. Если стек пустой, возвращает None."""
         if len(self.__st) == 0:
             return None
-        if elem:
-            return self.__st.remove(elem)
-        else:
-            return self.__st.remove(self.__st[-1])
+        return self.__st.pop()
 
 
 class TaskManager:
@@ -72,13 +68,13 @@ class TaskManager:
     def __str__(self):
         """Метод __str__ отображает отсортированный по приоритету список задач"""
         display = []
-        if self.task: # todo можно не проверять, цикл по пустому словарю и так не пойдет
-            for i_priority in sorted(self.task.keys()):
-                display.append('{prior} - {task}\n'.format(
-                    prior=str(i_priority),
-                    task=self.task[i_priority]
-                )
-                )
+        # todo можно не проверять, цикл по пустому словарю и так не пойдет
+        for i_priority in sorted(self.task.keys()):
+            display.append('{prior} - {task}\n'.format(
+                prior=str(i_priority),
+                task=self.task[i_priority]
+            )
+            )
 
         return ''.join(display)
 
@@ -94,9 +90,13 @@ class TaskManager:
         """Метод удаляет задачу из менеджера по названию задачи"""
         for key, val in self.task.items():
             if task in str(val):
-                val.remove(task)
-                break
-
+                temp_elems = []
+                while not str(val).endswith(task):
+                    temp_elems.append(val.pop())
+                else:
+                    val.pop()
+                    for elem in temp_elems[::-1]:
+                        val.push(elem)
 
 # s = Stack()
 # print(s)
@@ -108,9 +108,12 @@ class TaskManager:
 # s.remove(1)
 # print(s)
 
+
 manager = TaskManager()
+manager.new_task("есть Читос", 4)
 manager.new_task("сделать уборку", 4)
 manager.new_task("помыть посуду", 4)
+manager.new_task("выпить Крота", 4)
 manager.new_task("отдохнуть", 1)
 manager.new_task("поесть", 2)
 manager.new_task("поесть", 2)  # дубликат
