@@ -74,9 +74,6 @@ with open(Path('karma.log'), 'w', encoding='utf-8') as karma_file:
                 break
             karma_points += one_day()
         except (KillError, DrunkError, CarCrashError, GluttonyError, DepressionError) as error:
-            karma_file.write(str(error))
+            karma_file.write(str(error)) # только я бы \n ставил тут, в str он как-то не очень смотрится)
 
-# todo все ок, только сами сообщения можно было бы поместить внутрь эксепшена
-# class MyException(Exception):
-#     msg = "Some death reason"
-# todo а потом ловить исключения скопом, и писать сообщение в файл
+# ok

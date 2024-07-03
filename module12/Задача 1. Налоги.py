@@ -132,7 +132,5 @@ if total_money >= total_cost:
 else:
     print(f'Вам не хватило: {round(total_cost - total_money, 2)}.')
 
-# todo в требованиях указано, что нужно написать докстринги для методов, остальное ок.
-# todo и есть еще упоминание про сеттеры-геттеры, видимо хотели чтобы worth был приватным
-
+# ok
 # print(Property.__doc__)
