@@ -68,7 +68,6 @@ class TaskManager:
     def __str__(self):
         """Метод __str__ отображает отсортированный по приоритету список задач"""
         display = []
-        # todo можно не проверять, цикл по пустому словарю и так не пойдет
         for i_priority in sorted(self.task.keys()):
             display.append('{prior} - {task}\n'.format(
                 prior=str(i_priority),
@@ -121,3 +120,5 @@ manager.new_task("сдать ДЗ", 2)
 print(manager)
 manager.remove_task("сделать уборку")  # удаляем задачу
 print(manager)
+
+# ok
