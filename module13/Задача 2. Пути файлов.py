@@ -48,3 +48,5 @@ def gen_files_path(searching_dir_name: str, directory: str = 'F:/') -> Iterable[
 
 for path in gen_files_path('module3', 'F:/'):
     print(path)
+
+# ok

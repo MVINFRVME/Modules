@@ -44,3 +44,5 @@ def count_lines_generator(cur_path: str) -> Iterable[int]:
 path_to_directory = '/Modules/module10'
 for file_num, line_count in enumerate(count_lines_generator(path_to_directory)):
     print(f'Файл {file_num + 1}: {line_count} строк.')
+
+# ok
