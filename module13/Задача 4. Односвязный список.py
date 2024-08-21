@@ -164,6 +164,6 @@ my_list.append(10)
 my_list.append(20)
 my_list.append(30)
 print(my_list)
-my_list.remove(2) # todo так падает с ошибкой
+my_list.remove(1) # todo так падает с ошибкой
 print(my_list)
 print(my_list.get(1))
