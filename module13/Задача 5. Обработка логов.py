@@ -42,7 +42,8 @@ def error_log_generator(cur_path):
                 yield line
 
 
-my_path = 'F:/Education/lessons/Modules/module13/target_file.txt' # todo в этом случае лучше использовать относительный путь, т.к. на другом компе абсолютный путь может отличаться (99 из 100)
+my_path = '/Education/lessons/Modules/module13/target_file.txt'  # todo в этом случае лучше использовать
+# todo относительный путь, т.к. на другом компе абсолютный путь может отличаться (99 из 100)
 with open(Path('error_logs.txt'), 'w', encoding='utf-8') as log_file:
     for data in error_log_generator(my_path):
         log_file.write(data)

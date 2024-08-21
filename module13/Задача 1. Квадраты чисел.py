@@ -18,7 +18,7 @@
 # возвращает, то используется None.
 
 
-from collections.abc import Iterable
+from collections.abc import Generator, Iterator
 
 
 class SquareIterator:
@@ -36,13 +36,13 @@ class SquareIterator:
         self.__count = 0
         self.__limit = limit
 
-    def __iter__(self): # todo Iterator
+    def __iter__(self) -> Iterator:  # todo Iterator
         """Метод  __iter__ возвращает итератор для данного объекта.
 
         :return: Возвращает сам объект итератора"""
         return self
 
-    def __next__(self): # todo тут можно было указать что возвращаем int
+    def __next__(self) -> int:  # todo тут можно было указать что возвращаем int
         """Метод __next__ создает следующее значение числа в квадрате
 
          :return self.__count ** 2: возвращает квадрат числа
@@ -64,7 +64,7 @@ print()
 # --------------------------------------------------------------------------------
 
 
-def square_generator(limit: int) -> Iterable[int]: # todo тут можно более точно указать, что ты вернешь генератор, Iterable общий объект, много всего подходит, не только генератор
+def square_generator(limit: int) -> Generator[int]: # todo тут можно более точно указать, что ты вернешь генератор, Iterable общий объект, много всего подходит, не только генератор
     for i in range(1, limit + 1):
         yield i ** 2
 
@@ -76,6 +76,6 @@ print()
 # --------------------------------------------------------------------------------
 
 squares = (num ** 2 for num in range(1, 11))
-for num in square_generator(10): # todo тут используешь генератор из прошлого примера
+for num in squares: # todo тут используешь генератор из прошлого примера
     print(num, end=' ')
 print()
