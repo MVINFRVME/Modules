@@ -65,3 +65,5 @@ def squares(n: int) -> List[int]:
 
 print(squares('asd'))
 print(squares(12))
+
+# ok

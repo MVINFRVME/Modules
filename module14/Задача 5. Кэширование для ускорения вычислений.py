@@ -41,7 +41,7 @@ def casher(func: Callable) -> Callable:
     return wrapper
 
 
-@casher
+# @casher
 def fibonacci(number: int) -> int:
     """Функции вычисления чисел Фибоначчи при помощи рекурсии."""
     if number <= 1:
@@ -53,3 +53,7 @@ print(fibonacci(4))
 print(fibonacci(4))
 print(fibonacci(5))
 print(fibonacci(10))
+print(fibonacci(50))
+
+# ok
+# посмотрел насколько дольше работает без декоратора?) В functools, есть похожмй декоратор lru_cache
