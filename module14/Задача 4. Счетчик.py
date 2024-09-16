@@ -37,3 +37,5 @@ def test(name: str) -> None:
 test('Влад')
 test('Илья')
 test('Адольф')
+
+# ok

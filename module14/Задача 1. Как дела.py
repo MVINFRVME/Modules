@@ -39,7 +39,7 @@ def how_are_you(func: Callable) -> Callable:
     def wrapped_func(*args, **kwargs):
         input('Как дела? ')
         print('А у меня не очень! Ладно, держи свою функцию.')
-        result = func(*args, **kwargs)
+        result = func(*args, **kwargs) # ok, но можно сразу было return func(...)
         return result
     return wrapped_func
 
@@ -56,3 +56,5 @@ def say_alliance(name: str) -> str:
 
 print(say_horde('Вол`Джин'))
 print(say_alliance('Утер'))
+
+# ok
