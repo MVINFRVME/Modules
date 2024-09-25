@@ -44,11 +44,10 @@
 # key3 : value3
 # value2git
 # LRU Cache:
-# key3 : value3
 # key2 : value2
 # key4 : value4
 
-from typing import List
+from typing import List, Any
 
 
 class LRUCache:
@@ -108,13 +107,17 @@ class LRUCache:
             key, value = elem[0][0], elem[0][1]
             print(f'{key} : {value}')
 
-    def get(self, curr_key) -> str:
-        """Метод возвращает искомое значение по ключу, а также увеличивает его популярность на 1."""
+    def get(self, curr_key) -> Any:
+        """Метод возвращает искомое значение по ключу, а также увеличивает его популярность на 1.
+        Если искомого ключа нет, то возвращает False."""
         for elem in self.__cache:
             key, value = elem[0][0], elem[0][1]
             if curr_key == key:
                 elem[1] += 1 # увеличиваем популярность на 1
                 return value
+        else:
+            return False
+
 
 
 # Создаём экземпляр класса LRU Cache с capacity = 3
